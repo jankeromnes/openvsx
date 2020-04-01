@@ -43,7 +43,7 @@ class ExtensionListItemComponent extends React.Component<ExtensionListItemCompon
         const { classes, extension } = this.props;
         const route = createRoute([ExtensionDetailRoutes.ROOT, extension.namespace, extension.name]);
         return <React.Fragment>
-            <Fade in={true} timeout={{ enter: this.props.idx * 200 }}>
+            <Fade in={true} timeout={{ enter: Math.max(this.props.idx, 5) * 200 }}>
                 <Grid item xs={12} sm={3} md={2} title={extension.displayName || extension.name} className={classes.extensionCard}>
                     <RouteLink to={route} className={classes.link}>
                         <Paper className={classes.paper}>
